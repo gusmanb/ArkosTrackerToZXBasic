@@ -41,4 +41,16 @@ The basic file provides an interrupt handler, a "play" function for each song an
 
 #### The interrupt handler
 
-This handler replaces the default spectrum's interrupt handler, it creates a 257 bytes table at $FE00 and a jump routine at $FDFD, this is the safest way to handle an IM2 interrupt in the spectrum and this setup uses the less possible memory. In my experience this could be reduced by removing the table and adding the INTERRUPT_HANDLER address to $
+This handler replaces the default spectrum's interrupt handler, it creates a 257 bytes table at $FE00 and a jump routine at $FDFD, this is the safest way to handle an IM2 interrupt in the spectrum and this setup uses the less possible memory. In my experience this could be reduced by removing the table and adding the INTERRUPT_HANDLER address at $FE00 but if the program is used in a real spectrum and the machine has something connected to the expansion port it could cause problems. The routine keeps updated the FRAMES system variable to ensure that any function that uses it is updated, but it does not call to the KEYB handler as it is not needed in ZX Basic.
+
+You must install this handler in order to get the music working as it calls the PLY_XXX_PLAY routine of the player, in order to do it call the "InstallInterruptHandler" function. You can install the handler whenever you want but it must be done BEFORE playing any song or it will not work.
+
+#### The "Play" functions
+
+For each song the tool will create a "Play" function, each one with the name of the song, continuing with the previous example, it would create a "PlayIntroMusic" and "PlayInGameMusic". These names are the ones of the files, not the identifiers given in the export, in this way you can use uppercase names to keep the code tidy and mixed uppercase and lowercase for these names.
+
+#### The "Stop" function
+
+A single function controls when the playback is stopped, calling this function the music will stop and the interrupt will no longer call the PLAY routine.
+
+

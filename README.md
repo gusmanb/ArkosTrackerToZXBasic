@@ -8,11 +8,11 @@ The tool can generate assembler source files compatible with ZXBASM or directly 
 
 To use the tool the exported songs have a minimal requirements:
 
--The supported formats are AKG or AKM.
--Every song must include a unique ASM label prefix.
--Songs cannot use samples.
--Songs must be exported along its configuration file.
--Songs must be exported as assembler source.
+* The supported formats are AKG or AKM.
+* Every song must include a unique ASM label prefix.
+* Songs cannot use samples.
+* Songs must be exported along its configuration file.
+* Songs must be exported as assembler source.
 
 These are very basic requirements, anything else is up to you :)
 

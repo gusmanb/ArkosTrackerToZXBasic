@@ -53,4 +53,7 @@ For each song the tool will create a "Play" function, each one with the name of 
 
 A single function controls when the playback is stopped, calling this function the music will stop and the interrupt will no longer call the PLAY routine.
 
+# Credits
 
+* [Julien Nevo](http://www.julien-nevo.com/) for the wonderful [Arkos Tracker 2](https://www.julien-nevo.com/arkostracker/) and the Disark tool.
+* [Edouard Berge](https://github.com/EdouardBERGE) for the [RASM](https://github.com/EdouardBERGE/rasm) Z80 assembler.

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ArkosTrackerToZXBasic": {
+      "commandName": "Project",
+      "commandLineArgs": "-s Intro:InGame -p Akg -o dndMusic.zxbas -t Basic"
+    }
+  }
+}
